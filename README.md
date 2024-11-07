@@ -58,7 +58,7 @@ fuel_consumption_calculator/
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/gitober/fuel_consumption_calculator.git
+   git clone https://github.com/gitober/fuelconsumptioncalculator.git
    cd fuel_consumption_calculator
    ```
 
@@ -82,8 +82,8 @@ fuel_consumption_calculator/
 2. **Create the Database**
 
    ```sql
-   CREATE DATABASE fuel_consumption_calculator;
-   USE fuel_consumption_calculator;
+   CREATE DATABASE fuelconsumptioncalculator;
+   USE fuelconsumptioncalculator;
    ```
 
 3. **Create Tables**
