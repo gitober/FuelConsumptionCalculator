@@ -79,35 +79,49 @@ fuel_consumption_calculator/
 
    Connect to your MySQL server using a client like MySQL Workbench.
 
-2. **Create the Database**
+   2. **Create the Database**
 
-   ```sql
-   CREATE DATABASE fuelconsumptioncalculator;
-   USE fuelconsumptioncalculator;
-   ```
+      ```sql
+      CREATE DATABASE fuelconsumptioncalculator;
+      USE fuelconsumptioncalculator;
+      ```
 
-3. **Create Tables**
+      3. **Create Tables**
 
-   Create tables to store calculation data and localized messages:
+         Create tables to store calculation data and localized messages:
 
-   ```sql
-   CREATE TABLE fuel_calculations (
-       id INT AUTO_INCREMENT PRIMARY KEY,
-       distance DECIMAL(10,2),
-       fuel DECIMAL(10,2),
-       consumption DECIMAL(10,2),
-       calculation_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-   );
+         ```sql
+         CREATE TABLE fuel_calculations (
+             id INT AUTO_INCREMENT PRIMARY KEY,
+             distance DECIMAL(10,2),
+             fuel DECIMAL(10,2),
+             consumption DECIMAL(10,2),
+             calculation_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+         );
 
-   CREATE TABLE localized_messages (
-       id INT AUTO_INCREMENT PRIMARY KEY,
-       language_code VARCHAR(2),
-       country_code VARCHAR(2),
-       message_key VARCHAR(50),
-       message_text VARCHAR(255),
-       UNIQUE (language_code, country_code, message_key)
-   );
-   ```
+         CREATE TABLE localized_messages (
+             id INT AUTO_INCREMENT PRIMARY KEY,
+             language_code VARCHAR(2),
+             country_code VARCHAR(2),
+             message_key VARCHAR(50),
+             message_text VARCHAR(255),
+             UNIQUE (language_code, country_code, message_key)
+         );
+         ```
+
+
+*Figure: Database setup in MySQL Workbench*  
+![Database Setup](src/main/resources/images/database_calc.png)
+
+
+*Figure: Database example table fuel_calculations*  
+![Database Setup](src/main/resources/images/database_fuel_calc.png)
+
+
+*Figure: Database example table localized_messages*  
+![Database Setup](src/main/resources/images/database_localized_messages.png)
+
+
 
 ## Usage
 
@@ -118,6 +132,23 @@ fuel_consumption_calculator/
     - Localized messages for the result will be stored in the `localized_messages` table, allowing retrieval in multiple languages.
     - Click **Reset** to clear the input fields.
     - Click **Close** to exit the application.
+
+
+*Figure: Language selection screen in English*
+![Language Selection - English](src/main/resources/images/fuel_eng.png)
+
+
+*Figure: Language selection screen in Farsi*
+![Language Selection - Farsi](src/main/resources/images/fuel_fa.png)
+
+
+*Figure: Language selection screen in France*
+![Language Selection - Farsi](src/main/resources/images/fuel_fr.png)
+
+
+*Figure: Language selection screen in Japanese*
+![Language Selection - Japanese](src/main/resources/images/fuel_jp.png)
+
 
 ## Additional Notes
 - **Configuration File**: The `config.properties` file contains sensitive information (database credentials). Ensure this file is not exposed publicly.

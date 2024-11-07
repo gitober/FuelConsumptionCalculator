@@ -12,7 +12,7 @@ public class FuelApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/org/example/fuelconsumptioncalculator/hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 400, 500);
-        stage.setTitle("Fuel Consumption");
+        stage.setTitle("Birgitta Öberg");
         stage.setScene(scene);
         stage.show();
     }
